@@ -9,7 +9,9 @@
 
 dl.dl-horizontal
   dt Name
-  dd= @album.name
+  dd
+  	= @album.name
+  	span= onsale? @album  
 
   dt Publisher
   dd= link_to @album.publisher.name, @album.publisher

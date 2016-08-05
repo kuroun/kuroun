@@ -13,6 +13,8 @@ table.table.table-striped
   tbody
     - @albums.each do |album|
       tr
-        td= link_to album.name, album
+        td
+        	= link_to album.name, album
+        	span= onsale?(album)
         td= album.publisher.name
         td= album.released_on
