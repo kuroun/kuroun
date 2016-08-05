@@ -3,6 +3,7 @@ require 'test_helper'
 class PublishersControllerTest < ActionController::TestCase
   setup do
     @publisher = publishers(:one)
+    @publisher.name = 'Unique Name'
   end
 
   test "should get index" do
