@@ -3,13 +3,9 @@
     .pull-right
       = link_to "New", new_artist_path, class: 'btn btn-primary'
     | Artists
-  
-table.table.table-striped
-  thead
-    tr
-      th name
-  tbody
-    - @artists.each do |artist|
-      tr
-        td= link_to artist.name, artist
-
+.container
+	.row
+		- @artists.each_with_index do |artist,i|
+			.col-lg-4 
+				=link_to image_tag("https://randomuser.me/api/portraits/#{i.even? ? 'men' : 'women'}/#{i}.jpg", :class => 'img-thumbnail', :title => artist.name), artist_path(artist)
+			

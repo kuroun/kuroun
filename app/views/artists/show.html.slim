@@ -10,7 +10,8 @@
     small.text-muted artist
 
 dl.dl-horizontal
-  dt Name
+  dt 
+  	img.img-thumbnail(src=@artist.image_url)
   dd= @artist.name
 
 hr
