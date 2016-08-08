@@ -7,6 +7,6 @@ class Album < ActiveRecord::Base
   validates :released_on, presence: true, format: { with: /\A\d{4}-\d{2}-\d{2}\z/, message: "should be in the format YYYY-MM-DD" }
   validates :publisher_id, presence: true
   
-  scope :recent, ->(n){where("released_on <= ?", 6.months.ago).limit(n)}
+  scope :recent, ->(n){where("released_on >= ?", 6.months.ago).limit(n)}
 
 end
