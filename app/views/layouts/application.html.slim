@@ -49,9 +49,7 @@ html lang="en"
           .col-md-2
             ul
               li LATEST
-              - Album.recent(2).each do |ab|
-              	- cache ab do
-              		li= link_to ab.name, album_path(ab)
+              = render partial: "layouts/latest_album", collection: Album.recent(2) 
           .col-md-2
             ul
               li OUR TEAM
